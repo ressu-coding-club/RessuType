@@ -8,6 +8,10 @@ const FINNISH_QUOTES = [
   "Säälikää nyt mua kun teidän kokeita on niin kamala tarkistaa"
 ]
 
+// c
+// t seconds
+// c/(t/60)
+
 const ENGLISH_QUOTES = [
   "This summer there have been a lot of mosquitos in Lapland and that has been a problem because they give a lot of Megabytes and it Gigahertz",
   "If you look at this picture here, what does it look like?",
@@ -35,7 +39,11 @@ quoteInputElement.addEventListener('input', () => {
     }
   })
 
-  if (correct) renderNewQuote()
+  if (correct){
+    
+    window.confirm("correct")
+    // also update the scoreboards here
+  } 
 })
 
 function getRandomQuote() {
@@ -60,12 +68,12 @@ function startTimer() {
   timerElement.innerText = 0
   startTime = new Date()
   setInterval(() => {
-    timer.innerText = getTimerTime()
+    timer.innerText = Math.floor(getTimerTime())
   }, 1000)
 }
 
 function getTimerTime() {
-  return Math.floor((new Date() - startTime) / 1000)
+  return ((new Date() - startTime) / 1000)
 }
 
 renderNewQuote()
