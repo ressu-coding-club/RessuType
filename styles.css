@@ -8,7 +8,7 @@
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #1E0555;
+    background-color: #0a0101;
   }
   
   body, .quote-input {
@@ -16,7 +16,7 @@
   }
   
   .container {
-    background-color: #F0DB4F;
+    background-color: #106619;
     padding: 1rem;
     border-radius: .5rem;
     width: 700px;
@@ -59,6 +59,6 @@
   }
   
   .incorrect {
-    color: red;
+    color: rgb(217, 213, 12);
     text-decoration: underline;
   }

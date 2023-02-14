@@ -39,9 +39,8 @@ quoteInputElement.addEventListener('input', () => {
 })
 
 function getRandomQuote() {
-  return QUOTES[0]
+  return FINNISH_QUOTES[0]
 }
-
 
 
 async function renderNewQuote() {
