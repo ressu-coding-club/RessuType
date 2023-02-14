@@ -1,7 +1,18 @@
-const RANDOM_QUOTE_API_URL = 'http://api.quotable.io/random'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
+
+const FINNISH_QUOTES = [
+  "Uskallatteko mennä Arin luolaan",
+  "kysyin miten hänellä oli mennyt lyhyen etäkurssi...hän oli saanut seiskan...enää en lähetä syntymäpäivälahjoja",
+  "Säälikää nyt mua kun teidän kokeita on niin kamala tarkistaa"
+]
+
+const ENGLISH_QUOTES = [
+  "This summer there have been a lot of mosquitos in Lapland and that has been a problem because they give a lot of Megabytes and it Gigahertz",
+  "If you look at this picture here, what does it look like?",
+  "Doo doo X"
+]
 
 quoteInputElement.addEventListener('input', () => {
   const arrayQuote = quoteDisplayElement.querySelectorAll('span')
@@ -28,10 +39,10 @@ quoteInputElement.addEventListener('input', () => {
 })
 
 function getRandomQuote() {
-  return fetch(RANDOM_QUOTE_API_URL)
-    .then(response => response.json())
-    .then(data => data.content)
+  return QUOTES[0]
 }
+
+
 
 async function renderNewQuote() {
   const quote = await getRandomQuote()
