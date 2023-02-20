@@ -78,10 +78,10 @@ quoteInputElement.addEventListener('input', () => {
 
   if (correct){
     
-    //change to replace()
-    sessionStorage.setItem("userTime", timer.innerText)
+    //check if user has html5 storage before using it
+    sessionStorage.setItem("userTime", getTimerTime())
+    //change to replace() later so users can't go back and break game
     window.location.href = "result.html"
-    // also update the scoreboards here
   } 
 })
 
