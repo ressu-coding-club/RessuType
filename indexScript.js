@@ -36,6 +36,7 @@ function renderNewQuote() {
   startTimer()
 }
 
+//timer shit
 function startTimer() {
   timerElement.innerText = 0
   startTime = new Date()
@@ -77,7 +78,9 @@ quoteInputElement.addEventListener('input', () => {
 
   if (correct){
     
-    window.alert("correct")
+    //change to replace()
+    sessionStorage.setItem("userTime", timer.innerText)
+    window.location.href = "result.html"
     // also update the scoreboards here
   } 
 })
