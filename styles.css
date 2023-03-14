@@ -55,10 +55,10 @@
   }
   
   .correct {
-    color: green;
+    color: rgb(13, 158, 255);
   }
   
   .incorrect {
-    color: rgb(217, 213, 12);
+    color: rgb(245, 80, 25);
     text-decoration: underline;
   }
