@@ -81,7 +81,7 @@ quoteInputElement.addEventListener('input', () => {
     //check if user has html5 storage before using it
     sessionStorage.setItem("userTime", getTimerTime())
     //change to replace() later so users can't go back and break game
-    window.location.href = "input.html"
+    window.location.replace("input.html")
   } 
 })
 

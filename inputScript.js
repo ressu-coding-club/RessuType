@@ -18,5 +18,7 @@ buttonElement.addEventListener("click", () =>{
         sessionStorage.setItem("userName", inputvalue)
         obj["userName"] = sessionStorage.getItem("userName")
         reportELement.innerText = "obj is: " + JSON.stringify(obj) 
+        sessionStorage.setItem("userData", JSON.stringify(obj))
+        console.log(sessionStorage.getItem("userData"))
     }
 })
