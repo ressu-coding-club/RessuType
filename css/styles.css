@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  margin: 0;
 }
 
 body {
@@ -7,8 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
   background-color: #0a0101;
+  flex-direction: column;
 }
 
 body,
@@ -17,17 +21,17 @@ body,
 }
 
 .container {
-  background-color: #106619;
+  /* background-color: #106619;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem; */
   width: 700px;
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .timer {
-  position: absolute;
-  top: 2rem;
-  font-size: 3rem;
+  /* position: absolute; */
+  /* top: 2rem; */
+  font-size: 4rem;
   color: #f0db4f;
   font-weight: bold;
 }
@@ -36,18 +40,20 @@ body,
   margin-bottom: 1rem;
   margin-left: calc(1rem + 2px);
   margin-right: calc(1rem + 2px);
+  color: white;
+  font-size: 4rem;
 }
 
 .quote-input {
-  background-color: transparent;
-  border: 2px solid #a1922e;
+  /* background-color: transparent; */
+  /* border: 2px solid #a1922e; */
   outline: none;
   width: 100%;
-  height: 8rem;
+  /* height: 4rem; */
   margin: auto;
   resize: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
   border-radius: 0.5rem;
 }
 
