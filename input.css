@@ -1,27 +1,24 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #000000;
-  }
-  
-  .container {
-    background-color: #106619;
-    padding: 1rem;
-    border-radius: .5rem;
-    width: 700px;
-    max-width: 90%;
-  }
+  box-sizing: border-box;
+}
 
-  .button {
-    size: 10;
-  }
-  
-  
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #000000;
+}
 
+.container {
+  background-color: #106619;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 700px;
+  max-width: 90%;
+}
+
+.button {
+  size: 10;
+}
