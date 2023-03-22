@@ -14,6 +14,7 @@
 
   <script src="js/inputScript.js" defer></script>
   <script src="js/indexScript.js" defer></script>
+  <script src="js/table.js" defer></script>
 </head>
 
 <body onmousedown="return false" onselect="return false">
@@ -30,6 +31,27 @@
     <input type="text" id="name" required maxlength="8" size="10">
     <button id="submitButton">SUBMIT</button>
     <div class="report" id="report"></div>
+  </div>
+  <div class="container-leaderboard not-visible">
+    <h2>Leaderboard</h2>
+    <div class="table-wrap">
+      <table border=2px>
+        <thead class="headers">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="dataDisplay">
+          <tr>
+            <td>1:</td>
+            <td>Tristan</td>
+            <td>33.333</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 
