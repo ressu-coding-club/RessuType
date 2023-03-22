@@ -1,6 +1,8 @@
-const quoteDisplayElement = document.getElementById("quoteDisplay");
-const quoteInputElement = document.getElementById("quoteInput");
-const timerElement = document.getElementById("timer");
+const quoteDisplay = document.getElementById("quoteDisplay");
+const quoteInput = document.getElementById("quoteInput");
+const timer = document.getElementById("timer");
+const gameContainer = document.querySelector(".container-game");
+const gameEndContainer = document.querySelector(".container-game-end");
 
 const FINNISH_QUOTES = [
   "test",
@@ -15,6 +17,8 @@ const ENGLISH_QUOTES = [
   "Doo doo X",
 ];
 
+let timerID;
+
 function getQuote() {
   return FINNISH_QUOTES[0];
 }
@@ -28,21 +32,20 @@ function renderNewQuote() {
     --> timer only starts once quote ready
   */
   const quote = getQuote();
-  quoteDisplayElement.innerHTML = "";
+  quoteDisplay.innerHTML = "";
   quote.split("").forEach((character) => {
     const characterSpan = document.createElement("span");
     characterSpan.innerText = character;
-    quoteDisplayElement.appendChild(characterSpan);
+    quoteDisplay.appendChild(characterSpan);
   });
-  quoteInputElement.value = null;
+  quoteInput.value = null;
   startTimer();
 }
 
-//timer shit
 function startTimer() {
-  timerElement.innerText = 0;
+  timer.innerText = 0;
   startTime = new Date();
-  setInterval(() => {
+  timerID = setInterval(() => {
     timer.innerText = Math.floor(getTimerTime());
   }, 1000);
 }
@@ -51,16 +54,17 @@ function getTimerTime() {
   return (new Date() - startTime) / 1000;
 }
 
-//input listener fires when input area changed
-quoteInputElement.addEventListener("input", () => {
-  const arrayQuote = quoteDisplayElement.querySelectorAll("span");
-  const arrayInput = quoteInputElement.value.split("");
+// input listener fires when input area changed
+quoteInput.addEventListener("input", () => {
+  const arrayQuote = quoteDisplay.querySelectorAll("span");
+  const arrayInput = quoteInput.value.split("");
 
   /*
   classes determine colour or none
   foreach item in this list, run this function
   every time there is input, cycles thru the whole input and quote and updates styles
   */
+
   let correct = true;
   arrayQuote.forEach((characterSpan, index) => {
     const character = arrayInput[index];
@@ -79,15 +83,25 @@ quoteInputElement.addEventListener("input", () => {
   });
 
   if (correct) {
-    //check if user has html5 storage before using it
     sessionStorage.setItem("userTime", getTimerTime());
-    //change to replace() later so users can't go back and break game
-    // window.location.replace("input.html");
+    clearInterval(timerID);
+
+    gameContainer.classList.remove("visible");
+    gameContainer.classList.add("not-visible");
+
+    gameEndContainer.classList.remove("not-visible");
+    gameEndContainer.classList.add("visible");
   }
 });
 
-/*
-unsure if order of calling these functions does anything
-asynchronous would probably affect things
-*/
-renderNewQuote();
+function startNewGame() {
+  gameContainer.classList.remove("not-visible");
+  gameContainer.classList.add("visible");
+
+  gameEndContainer.classList.remove("visible");
+  gameEndContainer.classList.add("not-visible");
+
+  renderNewQuote();
+}
+
+startNewGame();
