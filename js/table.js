@@ -1,6 +1,8 @@
 const tablebodyElement = document.getElementById("dataDisplay");
+const leaderboardButton = document.getElementById("showLeaderboardButton");
+const closeLeaderboard = document.getElementById("closeLeaderboardButton");
 
-const url = "https://jvbx5svkll.execute-api.eu-north-1.amazonaws.com/dev2";
+// const url = "https://jvbx5svkll.execute-api.eu-north-1.amazonaws.com/dev2";
 
 const myHeaders = new Headers();
 
@@ -17,7 +19,7 @@ const data = fetch(myRequest)
 
 console.log(data);
 
-function addrow() {
+function addRow() {
   const newRow = document.createElement("tr");
 
   const cell1 = document.createElement("td");
@@ -33,3 +35,22 @@ function addrow() {
 
   tablebodyElement.appendChild(newRow);
 }
+
+leaderboardButton.addEventListener("click", () => {
+  gameContainer.classList.remove("visible");
+  gameContainer.classList.add("not-visible");
+
+  // gameEndContainer.classList.remove("visible");
+  // gameEndContainer.classList.add("not-visible");
+
+  leaderboardContainer.classList.remove("not-visible");
+  leaderboardContainer.classList.add("visible");
+});
+
+closeLeaderboard.addEventListener("click", () => {
+  gameContainer.classList.remove("not-visible");
+  gameContainer.classList.add("visible");
+
+  leaderboardContainer.classList.remove("visible");
+  leaderboardContainer.classList.add("not-visible");
+});

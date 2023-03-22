@@ -1,8 +1,11 @@
 const quoteDisplay = document.getElementById("quoteDisplay");
 const quoteInput = document.getElementById("quoteInput");
 const timer = document.getElementById("timer");
+
+// container
 const gameContainer = document.querySelector(".container-game");
 const gameEndContainer = document.querySelector(".container-game-end");
+const leaderboardContainer = document.querySelector(".container-leaderboard");
 
 const FINNISH_QUOTES = [
   "test",

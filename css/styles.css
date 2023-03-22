@@ -6,6 +6,15 @@
   margin: 0;
 }
 
+button {
+  background-color: black;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -81,7 +90,8 @@ body,
   display: none;
 }
 
-.container-game-end {
+.container-game-end,
+.container-leaderboard {
   padding: 1rem;
   background-color: white;
   color: black;
@@ -98,20 +108,26 @@ body,
   font-size: 1rem;
 }
 
-/* #submitButton {
-  background-color: black;
-  color: white;
-  border-radius: 0.25rem;
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  cursor: pointer;
-} */
+.show-leaderboard-button-parent {
+  display: flex;
+  justify-content: center;
+}
 
-button {
-  background-color: black;
-  color: white;
-  border-radius: 0.25rem;
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  cursor: pointer;
+#showLeaderboardButton {
+  background-color: white;
+  color: black;
+}
+
+#closeLeaderboardButton {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: white;
+  color: black;
+}
+
+.leaderboard-header {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
