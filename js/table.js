@@ -6,18 +6,18 @@ const closeLeaderboard = document.getElementById("closeLeaderboardButton");
 
 const myHeaders = new Headers();
 
-const myRequest = new Request(url, {
-  method: "GET",
-  headers: myHeaders,
-  mode: "cors",
-  cache: "default",
-});
+// const myRequest = new Request(url, {
+//   method: "GET",
+//   headers: myHeaders,
+//   mode: "cors",
+//   cache: "default",
+// });
 
-const data = fetch(myRequest)
-  .then((response) => response.json())
-  .catch(console.log("error"));
+// const data = fetch(myRequest)
+//   .then((response) => response.json())
+//   .catch(console.log("error"));
 
-console.log(data);
+// console.log(data);
 
 function addRow() {
   const newRow = document.createElement("tr");
