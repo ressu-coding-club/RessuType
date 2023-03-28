@@ -14,11 +14,11 @@ A typing game with Ressu related words
 
 ## Roadmap
 
-- [] make backend to work
-- [] Test everything
-- [] SEO optimization
-- [] schema.org, robots.txt, sitemap.xml
-- [] add link to website from the coding club's website
+- [ ] make backend to work
+- [ ] Test everything
+- [ ] SEO optimization
+- [ ] schema.org, robots.txt, sitemap.xml
+- [ ] add link to website from the coding club's website
 
 ## License
 
