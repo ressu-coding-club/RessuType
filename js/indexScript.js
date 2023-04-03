@@ -42,7 +42,6 @@ function renderNewQuote() {
     quoteDisplay.appendChild(characterSpan);
   });
   quoteInput.value = null;
-  startTimer();
 }
 
 function startTimer() {
@@ -57,8 +56,25 @@ function getTimerTime() {
   return (new Date() - startTime) / 1000;
 }
 
+function startNewGame() {
+  gameContainer.classList.remove("not-visible");
+  gameContainer.classList.add("visible");
+
+  gameEndContainer.classList.remove("visible");
+  gameEndContainer.classList.add("not-visible");
+
+  
+}
+
+let typestart = true;
 // input listener fires when input area changed
 quoteInput.addEventListener("input", () => {
+
+  if (typestart) {
+    startTimer();
+    typestart = false;
+  };
+
   const arrayQuote = quoteDisplay.querySelectorAll("span");
   const arrayInput = quoteInput.value.split("");
 
@@ -97,14 +113,6 @@ quoteInput.addEventListener("input", () => {
   }
 });
 
-function startNewGame() {
-  gameContainer.classList.remove("not-visible");
-  gameContainer.classList.add("visible");
+renderNewQuote();
 
-  gameEndContainer.classList.remove("visible");
-  gameEndContainer.classList.add("not-visible");
 
-  renderNewQuote();
-}
-
-startNewGame();
