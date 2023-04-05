@@ -14,7 +14,7 @@ A typing game with Ressu related words
 
 ## Roadmap
 
-- [ ] make backend to work
+- [X] make backend to work
 - [ ] censor names
 - [ ] Test everything
 - [ ] SEO optimization
