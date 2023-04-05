@@ -15,7 +15,8 @@ A typing game with Ressu related words
 ## Roadmap
 
 - [X] make backend to work
-- [ ] censor names
+- [ ] censor names in backend
+- [ ] front end finished
 - [ ] Test everything
 - [ ] SEO optimization
 - [ ] schema.org, robots.txt, sitemap.xml
