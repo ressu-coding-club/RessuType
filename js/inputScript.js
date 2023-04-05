@@ -1,7 +1,7 @@
 const congratulationTxt = document.getElementById("congrats");
 const submitInstructions = document.getElementById("inputinstruction");
 const submitButton = document.getElementById("submitButton");
-const nameInput = document.getElementById("name");
+const nameInput = document.getElementById("submitname");
 // const reportELement = document.getElementById("report");
 const time = sessionStorage.getItem("userTime");
 
@@ -23,5 +23,5 @@ submitButton.addEventListener("click", () => {
     sessionStorage.setItem("userData", JSON.stringify(obj));
     console.log(sessionStorage.getItem("userData"));
   }
-  startNewGame();
+  switchVisible(gameEndContainer, gameContainer);
 });

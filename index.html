@@ -12,12 +12,12 @@
     content="Have you ever wondered who is the fastest typer in Ressu? Now you can find out with this typing game!">
   <link rel="icon" type="image/x-icon" href="favicon.png">
 
-  <!--script src="js/inputScript.js" defer></script-->
   <script src="js/indexScript.js" defer></script>
+  <script src="js/inputScript.js" defer></script>
   <!--script src="js/table.js" defer></script-->
 </head>
 
-<body onmousedown="return false" onselect="return false">
+<body>
   <div class="container-game visible">
     <div class="timer" id="timer">0</div>
     <div class="quote-display" id="quoteDisplay"></div>
@@ -30,8 +30,8 @@
   </div>
   <div class="container-game-end not-visible">
     <div class="congratulations" id="congrats"></div>
-    <label for="name" id="inputinstruction"></label>
-    <input type="text" id="name" required maxlength="8" size="10">
+    <label for="submitname" id="inputinstruction"></label>
+    <input type="text" id="submitname" required maxlength="8" size="5" autofocus>
     <button id="submitButton">SUBMIT</button>
     <div class="report" id="report"></div>
   </div>
