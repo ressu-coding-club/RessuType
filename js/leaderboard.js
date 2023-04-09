@@ -1,25 +1,7 @@
 const tablebodyElement = document.getElementById("tableBody");
 const leaderboardButton = document.getElementById("showLeaderboardButton");
 const closeLeaderboard = document.getElementById("closeLeaderboardButton");
-
-const url = "https://jvbx5svkll.execute-api.eu-north-1.amazonaws.com/dev3";
-const a = {
-  method: "GET", // *GET, POST, PUT, DELETE, etc.
-  mode: "cors", // no-cors, *cors, same-origin
-  cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-  credentials: "omit", // include, *same-origin, omit
-  headers: {
-    "Content-Type": "application/json"}
-    };
-
-/*
-const b = fetch(url, a)
-  .then((response) => response.json())
-  .then(data => {
-    console.log(data)
-  })
-  */
-
+const leaderboardContainer = document.querySelector(".container-leaderboard");
 
 function addRow() {
   const newRow = document.createElement("tr");
