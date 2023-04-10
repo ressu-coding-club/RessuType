@@ -1,11 +1,12 @@
-import { renderNewQuote, characterCheck, switchVisible, renderEndText, highest } from "./game.js";
-import { startTimer, getTimerTime } from "./utils.js";
+import { renderNewQuote, quoteCorrect, switchVisible, renderEndText, highest } from "./game.js";
+import { startTimer, getTimerTime, endTimer } from "./utils.js";
 
 const body = document.body
 const quoteDisplay = document.getElementById("quoteDisplay");
 const quoteInput = document.getElementById("quoteInput");
 const gameContainer = document.querySelector(".container-game");
 const gameEndContainer = document.querySelector(".container-game-end")
+const timerElem = document.getElementById("timer")
 
 
 const timeReport = document.getElementById("timeReport");
@@ -17,7 +18,7 @@ const nameInput = document.getElementById("submitname");
 let userData = {}
 let name = ""
 let time = 0
-let highScore = 0
+let highScore = null;
 
 function attachListeners() {
 
@@ -25,7 +26,10 @@ function attachListeners() {
   quoteInput.addEventListener("input", () => {
 
     if (typestart) {startTimer(); typestart = false;}
-    if (characterCheck(quoteDisplay, quoteInput)) {
+    if (quoteCorrect(quoteDisplay, quoteInput)) {
+      endTimer(timerElem)
+      renderNewQuote(quoteDisplay, quoteInput)
+      typestart = true
       time = getTimerTime()
       highScore = highest(time, highScore)
       switchVisible(gameContainer, gameEndContainer); 
@@ -33,7 +37,7 @@ function attachListeners() {
     }
 
 
-  })
+  });
 
   submitButton.addEventListener("click", () => {
     name = nameInput.value;

@@ -46,7 +46,7 @@ function switchVisible(hide, show) {
     show.classList.add("visible");
 }
 
-function characterCheck(quoteDisplay, quoteInput) {
+function quoteCorrect(quoteDisplay, quoteInput) {
     const arrayQuote = quoteDisplay.querySelectorAll("span");
     const arrayInput = quoteInput.value.split("");
     
@@ -71,7 +71,9 @@ function characterCheck(quoteDisplay, quoteInput) {
 }
 
 function highest (time, highScore) {
-  if (time > highScore) {
+  if (time < highScore) {
+    return time
+  } else if (highScore === null) {
     return time
   };
   return highScore
@@ -80,8 +82,8 @@ function highest (time, highScore) {
 
 function renderEndText (time, highScore, timeReport, highReport, submitInstructions) {
   timeReport.innerText = `You typed the quote in ${time.toString()} seconds!`;
-  highReport.innerText = `Your current high score is: ${highScore.toString()} seconds.`;
+  highReport.innerText = `Your current fastest time is: ${highScore.toString()} seconds.`;
   submitInstructions.innerText = "Write your name and press the button (4 to 8 characters)";
 }
 
-export {renderNewQuote, switchVisible, characterCheck, renderEndText, highest}
+export {renderNewQuote, switchVisible, quoteCorrect, renderEndText, highest}

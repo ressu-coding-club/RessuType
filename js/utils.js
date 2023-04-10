@@ -14,6 +14,11 @@ function getTimerTime() {
     return (new Date() - startTime) / 1000;
 }
 
+function endTimer(timerElem) {
+    clearInterval(timerID)
+    timerElem.innerText = "0"
+}
+
 /*API CALLS*/
 
 function getTimes() {
@@ -48,4 +53,4 @@ async function asynccall(func) {
     console.log(res)
 }
 
-export {startTimer, getTimerTime}
+export {startTimer, getTimerTime, endTimer}
