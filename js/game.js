@@ -1,9 +1,4 @@
 /*GAME*/
-const body = document.body
-const quoteDisplay = document.getElementById("quoteDisplay");
-const quoteInput = document.getElementById("quoteInput");
-const gameContainer = document.querySelector(".container-game");
-const gameEndContainer = document.querySelector(".container-game-end")
 
 const FINNISH_QUOTES = [
       "test",
@@ -22,7 +17,7 @@ function getQuote() {
     return FINNISH_QUOTES[0];
 }
 
-export function renderNewQuote() {
+function renderNewQuote(quoteDisplay, quoteInput) {
     /*
     clears quote element and replaces it with a list of elements;
     each item is a character of quote
@@ -51,7 +46,7 @@ function switchVisible(hide, show) {
     show.classList.add("visible");
 }
 
-export function characterCheck() {
+function characterCheck(quoteDisplay, quoteInput) {
     const arrayQuote = quoteDisplay.querySelectorAll("span");
     const arrayInput = quoteInput.value.split("");
     
@@ -71,49 +66,22 @@ export function characterCheck() {
         correct = false;
     }});
   
-    if (correct) {
-      switchVisible(gameContainer, gameEndContainer)
-    }
+    if (correct) {return true};
   
 }
 
+function highest (time, highScore) {
+  if (time > highScore) {
+    return time
+  };
+  return highScore
 
-
-
-
-
-/*
-const congratulationTxt = document.getElementById("congrats");
-const submitInstructions = document.getElementById("inputinstruction");
-const submitButton = document.getElementById("submitButton");
-const nameInput = document.getElementById("submitname");
-const reportELement = document.getElementById("report");
-
-
-
-const obj = {
-  userName: "",
-  userTime: time,
-};
-
-
-function onSubmit () {
-  let inputvalue = nameInput.value;
-  if (inputvalue.length > 0) {
-    sessionStorage.setItem("userName", inputvalue);
-    obj["userName"] = sessionStorage.getItem("userName");
-    sessionStorage.setItem("userData", JSON.stringify(obj));
-    console.log(sessionStorage.getItem("userData"));
-  }
-switchVisible(gameEndContainer, gameContainer);
 }
 
-submitButton.addEventListener("click", () => {
+function renderEndText (time, highScore, timeReport, highReport, submitInstructions) {
+  timeReport.innerText = `You typed the quote in ${time.toString()} seconds!`;
+  highReport.innerText = `Your current high score is: ${highScore.toString()} seconds.`;
+  submitInstructions.innerText = "Write your name and press the button (4 to 8 characters)";
+}
 
-  });
-
-
-congratulationTxt.innerText = "You typed the quote in " + time + " seconds!";
-submitInstructions.innerText =
-  "Write your name and press the button (4 to 8 characters)";
-*/
+export {renderNewQuote, switchVisible, characterCheck, renderEndText, highest}

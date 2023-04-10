@@ -2,7 +2,7 @@
 const timer = document.getElementById("timer");
 let startTime = 0;
 let timerID;
-export function startTimer() {
+function startTimer() {
     startTime = new Date();
     timerID = setInterval(() => {
       timer.innerText = Math.floor(getTimerTime())
@@ -47,3 +47,5 @@ async function asynccall(func) {
     const res = await func;
     console.log(res)
 }
+
+export {startTimer, getTimerTime}
