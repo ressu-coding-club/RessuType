@@ -1,5 +1,6 @@
 import { renderNewQuote, quoteCorrect, switchVisible, renderEndText, highest } from "./game.js";
-import { startTimer, getTimerTime, endTimer } from "./utils.js";
+import { startTimer, getTimerTime, endTimer, asynccall, getData } from "./utils.js";
+import { renderLeaderboard } from "./leaderboard.js";
 
 const body = document.body
 const quoteDisplay = document.getElementById("quoteDisplay");
@@ -55,6 +56,7 @@ function main() {
 
   renderNewQuote(quoteDisplay, quoteInput)
   attachListeners()
+  renderLeaderboard(getData())
   
 
 }

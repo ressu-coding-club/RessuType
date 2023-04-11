@@ -16,14 +16,12 @@
 </head>
 
 <body>
+  <div class="top3"></div>
   <div class="container-game visible">
     <div class="timer" id="timer">0</div>
     <div class="quote-display" id="quoteDisplay"></div>
     <div class="quote-input-parent">
       <textarea id="quoteInput" class="quote-input" autofocus></textarea>
-    </div>
-    <div class="show-leaderboard-button-parent">
-      <button id="showLeaderboardButton">LEADERBOARD</button>
     </div>
   </div>
   <div class="container-game-end not-visible">
@@ -33,14 +31,13 @@
     <input type="text" id="submitname" required maxlength="8" size="5" autofocus>
     <button id="submitButton">SUBMIT</button>
   </div>
-  <div class="container-leaderboard not-visible">
+  <div class="container-leaderboard">
     <div class="leaderboard-header">
-
       <h2>Leaderboard</h2>
       <button id="closeLeaderboardButton">X</button>
     </div>
     <div class="table-wrap">
-      <table border=5px>
+      <table>
         <thead class="headers">
           <tr>
             <th>#</th>
@@ -49,21 +46,6 @@
           </tr>
         </thead>
         <tbody id="tableBody">
-          <tr>
-            <td>1</td>
-            <td>Tristan</td>
-            <td>69.420</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>ÄPPÄ</td>
-            <td>00.420</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>ülæf</td>
-            <td>3.000</td>
-          </tr>
         </tbody>
       </table>
     </div>

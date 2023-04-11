@@ -21,7 +21,7 @@ function endTimer(timerElem) {
 
 /*API CALLS*/
 
-function getTimes() {
+function getData() {
     const url = "https://jvbx5svkll.execute-api.eu-north-1.amazonaws.com/dev3";
     const httpdata = {
     method: "GET",
@@ -50,7 +50,7 @@ function post_userData (obj) {
 
 async function asynccall(func) {
     const res = await func;
-    console.log(res)
+    return res
 }
 
-export {startTimer, getTimerTime, endTimer}
+export {startTimer, getTimerTime, endTimer, asynccall, getData}

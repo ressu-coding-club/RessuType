@@ -17,16 +17,17 @@ button {
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-height: 100vh;
   background-color: #0a0101;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 body,
+
 .quote-input {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", sans-serif;
 }
 
 .timer {
@@ -90,8 +91,7 @@ body,
   display: none;
 }
 
-.container-game-end,
-.container-leaderboard {
+.container-game-end {
   padding: 1rem;
   background-color: white;
   color: black;
@@ -102,20 +102,32 @@ body,
   max-width: 90%;
 }
 
+.container-leaderboard {
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  width: 350px;
+  max-width: 90%;
+}
+
+.top3 {
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  width: 350px;
+  max-width: 90%;
+}
+
 #submitname {
   border: 1px solid black;
   padding: 0.25rem;
   font-size: 1rem;
-}
-
-.show-leaderboard-button-parent {
-  display: flex;
-  justify-content: center;
-}
-
-#showLeaderboardButton {
-  background-color: white;
-  color: black;
 }
 
 #closeLeaderboardButton {
