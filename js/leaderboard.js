@@ -1,6 +1,4 @@
 const tablebodyElement = document.getElementById("tableBody");
-const closeLeaderboard = document.getElementById("closeLeaderboardButton");
-const leaderboardContainer = document.querySelector(".container-leaderboard");
 
 function renderNewRow(rank, name, time) {
   const newRow = document.createElement("tr");
@@ -30,13 +28,3 @@ async function renderLeaderboard(getData) {
 }
 
 export {renderLeaderboard}
-
-/*
-closeLeaderboard.addEventListener("click", () => {
-  gameContainer.classList.remove("not-visible");
-  gameContainer.classList.add("visible");
-
-  leaderboardContainer.classList.remove("visible");
-  leaderboardContainer.classList.add("not-visible");
-});
-*/
