@@ -70,20 +70,24 @@ function quoteCorrect(quoteDisplay, quoteInput) {
   
 }
 
-function highest (time, highScore) {
+function fastestUpdate (time, highScore) {
   if (time < highScore) {
-    return time
+    return [true, time]
   } else if (highScore === null) {
-    return time
+    return [true, time]
   };
-  return highScore
+  return false
 
 }
 
-function renderEndText (time, highScore, timeReport, highReport, submitInstructions) {
+function renderEndText (time, highScore, timeReport, highReport, submitInstructions, nameSubmitted) {
   timeReport.innerText = `You typed the quote in ${time.toString()} seconds!`;
   highReport.innerText = `Your current fastest time is: ${highScore.toString()} seconds.`;
-  submitInstructions.innerText = "Write your name and press the button (4 to 8 characters)";
+  if (nameSubmitted) {
+    submitInstructions.innerText = null
+  } else {
+    submitInstructions.innerText = "Write your name and press the button (4 to 8 characters)";
+  }
 }
 
-export {renderNewQuote, switchVisible, quoteCorrect, renderEndText, highest}
+export {renderNewQuote, switchVisible, quoteCorrect, renderEndText, fastestUpdate}

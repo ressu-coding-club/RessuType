@@ -1,4 +1,4 @@
-import { renderNewQuote, quoteCorrect, switchVisible, renderEndText, highest } from "./game.js";
+import { renderNewQuote, quoteCorrect, switchVisible, renderEndText, fastestUpdate } from "./game.js";
 import { startTimer, getTimerTime, endTimer, asynccall, getData } from "./utils.js";
 import { renderLeaderboard } from "./leaderboard.js";
 
@@ -20,24 +20,28 @@ let userData = {}
 let name = ""
 let time = 0
 let highScore = null;
+let nameSubmitted = false
+let gameOn = true
+let keyDown = false
 
 function attachListeners() {
 
   let typestart = true
   quoteInput.addEventListener("input", () => {
-
-    if (typestart) {startTimer(); typestart = false;}
-    if (quoteCorrect(quoteDisplay, quoteInput)) {
-      endTimer(timerElem)
-      renderNewQuote(quoteDisplay, quoteInput)
-      typestart = true
-      time = getTimerTime()
-      highScore = highest(time, highScore)
-      switchVisible(gameContainer, gameEndContainer); 
-      renderEndText(time, highScore, timeReport, highReport, submitInstructions);
-    }
-
-
+    
+    if (gameOn) {
+      if (typestart) {startTimer(); typestart = false;}
+      if (quoteCorrect(quoteDisplay, quoteInput)) {
+        gameOn = false
+        endTimer(timerElem)
+        renderNewQuote(quoteDisplay, quoteInput)
+        typestart = true
+        time = getTimerTime()
+        const x = fastestUpdate(time, highScore)
+        if (x[0]) {highScore = x[1]; /* + post*/}
+        switchVisible(gameContainer, gameEndContainer); 
+        renderEndText(time, highScore, timeReport, highReport, submitInstructions, nameSubmitted);
+    }}
   });
 
   submitButton.addEventListener("click", () => {
@@ -47,16 +51,44 @@ function attachListeners() {
       "userTime": highScore
     }
     console.log(userData)
+    submitButton.classList.remove("visible")
+    submitButton.classList.add("not-visible")
+    nameInput.classList.remove("visible")
+    nameInput.classList.add("not-visible")
+    nameSubmitted = true
     switchVisible(gameEndContainer, gameContainer)
+    quoteInput.focus()
+    gameOn = true
 
   });
+
+  document.addEventListener("keydown", () => {
+    if (!gameOn && nameSubmitted) {
+      keyDown = true
+    }
+  })
+
+
+  document.addEventListener("keyup", () => {
+    if (keyDown) {
+      console.log("Keyup fired")
+      console.log(gameOn)
+      switchVisible(gameEndContainer, gameContainer)
+      quoteInput.focus()
+      keyDown = false
+      gameOn = true
+    }
+  });
+    
+  
+
 }
 
 function main() {
 
   renderNewQuote(quoteDisplay, quoteInput)
   attachListeners()
-  renderLeaderboard(getData())
+  //renderLeaderboard(getData())
   
 
 }

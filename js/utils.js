@@ -6,7 +6,6 @@ function startTimer() {
     startTime = new Date();
     timerID = setInterval(() => {
       timer.innerText = Math.floor(getTimerTime())
-      console.log(getTimerTime());
     }, 1000);
 }
 
