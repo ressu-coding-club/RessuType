@@ -15,7 +15,7 @@
   <script type="module" src="js/app.js"></script>
 </head>
 
-<body>
+<body class="unselectable">
   <div class="top3"></div>
   <div class="container-game visible">
     <div class="timer" id="timer">0</div>
@@ -28,8 +28,8 @@
     <div class="time-report" id="timeReport">lalala</div>
     <div class="high-score" id="highScore">yoyoo</div>
     <label for="submitname" id="inputinstruction"></label>
-    <input type="text" id="submitname" required maxlength="8" size="5" autofocus>
-    <button id="submitButton">SUBMIT</button>
+    <input class="visible" type="text" id="submitname" required maxlength="8" size="5">
+    <button class="visible" id="submitButton">SUBMIT</button>
   </div>
   <div class="container-leaderboard">
     <div class="leaderboard-header">
