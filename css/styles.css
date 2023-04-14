@@ -41,14 +41,15 @@ body,
   justify-content: center;
 }
 
+/* The GAME (quote + timer + input) are off-center. -Problem is with margins*/
+
 .quote-display {
-  display: block;
+  display:inline-block;
   margin-bottom: 1rem;
   margin-left: calc(1rem + 2px);
   margin-right: calc(1rem + 2px);
   color: white;
-  font-size: 4rem;
-  justify-content: center; 
+  font-size: 3rem;
 }
 
 .quote-input-parent {
@@ -121,6 +122,8 @@ body,
   width: 350px;
   max-width: 90%;
 }
+
+/* This element shrinks when longer quote is rendered, not sure why*/
 
 .top3 {
   padding: 1rem;
