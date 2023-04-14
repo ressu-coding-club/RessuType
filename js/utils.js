@@ -33,7 +33,7 @@ function getData() {
     .then(data => data)
 }
 
-function post_userData (obj) {
+function postData (obj) {
     const url = "https://jvbx5svkll.execute-api.eu-north-1.amazonaws.com/dev3";
     const httpdata = {
         method: "POST",
@@ -49,7 +49,7 @@ function post_userData (obj) {
 
 async function asynccall(func) {
     const res = await func;
-    return res
+    console.log(res)
 }
 
-export {startTimer, getTimerTime, endTimer, asynccall, getData}
+export {startTimer, getTimerTime, endTimer, asynccall, getData, postData}

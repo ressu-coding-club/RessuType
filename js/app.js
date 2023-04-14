@@ -1,5 +1,5 @@
 import { renderNewQuote, quoteCorrect, switchVisible, renderEndText, fastestUpdate } from "./game.js";
-import { startTimer, getTimerTime, endTimer, asynccall, getData } from "./utils.js";
+import { startTimer, getTimerTime, endTimer, asynccall, getData, postData } from "./utils.js";
 import { renderLeaderboard } from "./leaderboard.js";
 
 const body = document.body
@@ -16,7 +16,10 @@ const submitInstructions = document.getElementById("inputinstruction");
 const submitButton = document.getElementById("submitButton");
 const nameInput = document.getElementById("submitname");
 
-let userData = {}
+let userData = {
+  "userName": "",
+  "userTime": 0
+}
 let name = ""
 let time = 0
 let highScore = null;
@@ -38,7 +41,13 @@ function attachListeners() {
         typestart = true
         time = getTimerTime()
         const x = fastestUpdate(time, highScore)
-        if (x[0]) {highScore = x[1]; /* + post*/}
+        if (x[0]) {
+          highScore = x[1]; 
+          userData.userTime = highScore;
+          if (nameSubmitted) {
+            asynccall(postData(userData));
+          } 
+        }
         switchVisible(gameContainer, gameEndContainer); 
         renderEndText(time, highScore, timeReport, highReport, submitInstructions, nameSubmitted);
     }}
@@ -46,11 +55,8 @@ function attachListeners() {
 
   submitButton.addEventListener("click", () => {
     name = nameInput.value;
-    userData = {
-      "userName": name,
-      "userTime": highScore
-    }
-    console.log(userData)
+    userData.userName = name
+    asynccall(postData(userData))
     submitButton.classList.remove("visible")
     submitButton.classList.add("not-visible")
     nameInput.classList.remove("visible")
@@ -88,7 +94,7 @@ function main() {
 
   renderNewQuote(quoteDisplay, quoteInput)
   attachListeners()
-  //renderLeaderboard(getData())
+  renderLeaderboard(getData())
   
 
 }
