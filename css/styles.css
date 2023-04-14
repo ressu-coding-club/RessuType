@@ -42,13 +42,13 @@ body,
 }
 
 .quote-display {
+  display: block;
   margin-bottom: 1rem;
   margin-left: calc(1rem + 2px);
   margin-right: calc(1rem + 2px);
   color: white;
   font-size: 4rem;
-  display: flex;
-  justify-content: center;
+  justify-content: center; 
 }
 
 .quote-input-parent {

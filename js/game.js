@@ -14,7 +14,8 @@ const ENGLISH_QUOTES = [
 
 
 function getQuote() {
-    return FINNISH_QUOTES[0];
+  //return FINNISH_QUOTES[0]
+  return ENGLISH_QUOTES[0];
 }
 
 function renderNewQuote(quoteDisplay, quoteInput) {
