@@ -1,4 +1,8 @@
 const tablebodyElement = document.getElementById("tableBody");
+const firstElement = document.getElementById("first")
+const secondElement = document.getElementById("second")
+const thirdElement = document.getElementById("third")
+
 
 function renderNewRow(rank, name, time) {
   const newRow = document.createElement("tr");
@@ -17,8 +21,8 @@ function renderNewRow(rank, name, time) {
   tablebodyElement.appendChild(newRow)
 }
 
-async function renderLeaderboard(getData) {
-  let data = await getData
+function renderLeaderboard(Data) {
+  let data = Data
   for (let x = 0; x < data.length; x++) {
     let rank = (x+1).toString()
     let name = data[x].userName.toString()
@@ -27,4 +31,18 @@ async function renderLeaderboard(getData) {
   }
 }
 
-export {renderLeaderboard}
+function renderTop3 (Data, ls) {
+  for (let x = 0; x < 3; x++) {
+    let name = Data[x].userName
+    let time = Data[x].userTime.toString()
+    ls[x].innerText = `${name} : ${time}`
+  }
+}
+
+async function GETRender (getData) {
+  let Data = await getData
+  renderLeaderboard(Data)
+  renderTop3(Data, [firstElement, secondElement, thirdElement])
+}
+
+export {GETRender}

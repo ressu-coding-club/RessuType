@@ -20,7 +20,8 @@ body {
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-  background-color: #0a0101;
+  background: rgb(44,88,0);
+  background: linear-gradient(90deg, rgba(44,88,0,1) 0%, rgba(16,149,37,1) 35%, rgba(0,255,111,1) 100%);
   flex-direction: row;
 }
 
@@ -123,13 +124,26 @@ body,
 
 .top3 {
   padding: 1rem;
-  background-color: white;
-  color: black;
+  border-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   font-weight: 500;
   border-radius: 0.5rem;
-  font-size: 1.25rem;
+  font-size:x-large;
+  text-decoration:double;
   width: 350px;
   max-width: 90%;
+}
+
+.first {
+  color: #f0db4f;
+}
+
+.second {
+  color: lightslategray;
+}
+
+.third {
+  color: chocolate;
 }
 
 #submitname {

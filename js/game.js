@@ -33,11 +33,6 @@ function renderNewQuote(quoteDisplay, quoteInput) {
     quoteInput.value = null;
 }
 
-function reset() {
-    body.onmousedown = () => {return false}
-    renderNewQuote()
-}
-
 function switchVisible(hide, show) {
     hide.classList.remove("visible");
     hide.classList.add("not-visible");
