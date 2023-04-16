@@ -16,42 +16,49 @@
 </head>
 
 <body class="unselectable">
-  <div class="top3">
-    <div class="first" id="first"></div>
-    <div class="second" id="second"></div>
-    <div class="third" id="third"></div>
-  </div>
-  <div class="container-game visible">
-    <div class="timer" id="timer">0</div>
-    <div class="quote-display" id="quoteDisplay"></div>
-    <div class="quote-input-parent">
-      <textarea id="quoteInput" class="quote-input" autofocus></textarea>
+  <div class="content-wrapper">
+
+    <div class="container-game visible">
+      <div class="timer" id="timer">0</div>
+      <div class="quote-display" id="quoteDisplay"></div>
+      <div class="quote-input-parent">
+        <textarea id="quoteInput" class="quote-input" autofocus></textarea>
+      </div>
     </div>
-  </div>
-  <div class="container-game-end not-visible">
-    <div class="time-report" id="timeReport">lalala</div>
-    <div class="high-score" id="highScore">yoyoo</div>
-    <label for="submitname" id="inputinstruction"></label>
-    <input class="visible" type="text" id="submitname" required maxlength="8" size="5">
-    <button class="visible" id="submitButton">SUBMIT</button>
-  </div>
-  <div class="container-leaderboard">
-    <div class="leaderboard-header">
-      <h2>Leaderboard</h2>
+    <div class="container-game-end not-visible">
+      <div class="time-report" id="timeReport">lalala</div>
+      <div class="high-score" id="highScore">yoyoo</div>
+      <label for="submitname" id="inputinstruction"></label>
+      <div style="display: flex">
+        <input class="visible" type="text" id="submitname" required maxlength="8" size="5">
+        <button class="visible" id="submitButton">SUBMIT</button>
+      </div>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead class="headers">
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Time</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-      </table>
+
+    <div class="top3-container">
+      <div class="first" id="first"></div>
+      <div class="second" id="second"></div>
+      <div class="third" id="third"></div>
     </div>
+    <div class="container-leaderboard">
+      <div class="leaderboard-header">
+        <h2>Leaderboard</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead class="headers">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 </body>
 

@@ -20,15 +20,36 @@ body {
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-  background: rgb(44,88,0);
-  background: linear-gradient(90deg, rgba(44,88,0,1) 0%, rgba(16,149,37,1) 35%, rgba(0,255,111,1) 100%);
+  background: rgb(44, 88, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(44, 88, 0, 1),
+    rgba(22, 118, 18, 1),
+    rgba(16, 149, 37, 1),
+    rgba(0, 187, 34, 1),
+    rgba(0, 255, 111, 1)
+  );
   flex-direction: row;
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body,
-
 .quote-input {
-  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
 }
 
 .timer {
@@ -44,10 +65,9 @@ body,
 /* The GAME (quote + timer + input) are off-center. -Problem is with margins*/
 
 .quote-display {
-  display:inline-block;
+  display: inline-block;
+  margin: 1.5rem 5rem;
   margin-bottom: 1rem;
-  margin-left: calc(1rem + 2px);
-  margin-right: calc(1rem + 2px);
   color: white;
   font-size: 3rem;
 }
@@ -125,14 +145,14 @@ body,
 
 /* This element shrinks when longer quote is rendered, not sure why*/
 
-.top3 {
+.top3-container {
   padding: 1rem;
   border-color: #ffffff;
   background-color: rgb(255, 255, 255);
   font-weight: 500;
   border-radius: 0.5rem;
-  font-size:x-large;
-  text-decoration:double;
+  font-size: x-large;
+  text-decoration: double;
   width: 350px;
   max-width: 90%;
 }
@@ -153,11 +173,21 @@ body,
   border: 1px solid black;
   padding: 0.25rem;
   font-size: 1rem;
+  font-size: 1rem;
+  margin: 0.25rem;
+  width: 50%;
 }
 
 .leaderboard-header {
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
