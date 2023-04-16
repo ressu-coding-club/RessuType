@@ -139,13 +139,12 @@ body,
   font-weight: 500;
   border-radius: 0.5rem;
   font-size: 1.25rem;
-  width: 350px;
   max-width: 90%;
 }
 
 /* This element shrinks when longer quote is rendered, not sure why*/
 
-.top3-container {
+.container-top3 {
   padding: 1rem;
   border-color: #ffffff;
   background-color: rgb(255, 255, 255);
@@ -153,8 +152,13 @@ body,
   border-radius: 0.5rem;
   font-size: x-large;
   text-decoration: double;
-  width: 350px;
   max-width: 90%;
+}
+
+.container-helping-info {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .first {

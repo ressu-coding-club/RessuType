@@ -18,6 +18,10 @@ function endTimer(timerElem) {
   timerElem.innerText = "0";
 }
 
+quoteInput.addEventListener("paste", (e) => {
+  e.preventDefault(); // Cancel the paste event
+});
+
 /*API CALLS*/
 
 function getData() {
